@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GameScope — Détection universelle de jeux vidéo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-grid" aria-hidden="true"></div>
+    <main class="shell">
+      <header class="hero">
+        <p class="eyebrow">Moteur intelligent • Multi-sources • Temps réel</p>
+        <h1>GameScope</h1>
+        <p class="subtitle">
+          Détecte pratiquement tous les jeux vidéo, y compris des expériences internes
+          à Roblox / Fortnite (ex: <strong>Blox Fruits</strong>) et des titres à venir.
+        </p>
+      </header>
+
+      <section class="search-panel" aria-label="Recherche de jeu vidéo">
+        <div class="field-group">
+          <label for="query">Nom du jeu</label>
+          <div class="input-wrap">
+            <input
+              id="query"
+              type="search"
+              placeholder="Ex: Blox Fruits, GTA VI, Hollow Knight Silksong..."
+              autocomplete="off"
+            />
+            <button id="searchBtn" class="btn btn-primary">Rechercher</button>
+          </div>
+        </div>
+
+        <div class="options">
+          <label class="toggle">
+            <input id="deepSearch" type="checkbox" checked />
+            <span>Recherche approfondie (Wikidata + Wikipedia + index local)</span>
+          </label>
+          <label class="toggle">
+            <input id="upcomingOnly" type="checkbox" />
+            <span>Filtrer: uniquement jeux à venir</span>
+          </label>
+        </div>
+
+        <p id="status" class="status">Prêt à rechercher.</p>
+      </section>
+
+      <section class="chips" aria-label="Suggestions rapides">
+        <button class="chip">Roblox</button>
+        <button class="chip">Blox Fruits</button>
+        <button class="chip">Fortnite</button>
+        <button class="chip">GTA VI</button>
+        <button class="chip">Valorant</button>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <h2>Résultats</h2>
+          <small id="count">0 élément</small>
+        </div>
+        <div id="results" class="results" role="list"></div>
+      </section>
+
+      <footer class="footer">
+        <p>
+          Données consolidées via index local + APIs publiques (Wikipedia / Wikidata). Les
+          résultats peuvent être enrichis avec vos propres sources pour une couverture
+          encore plus complète.
+        </p>
+      </footer>
+    </main>
+
+    <template id="cardTemplate">
+      <article class="card" role="listitem">
+        <div class="card-top">
+          <span class="badge"></span>
+          <span class="source"></span>
+        </div>
+        <h3 class="title"></h3>
+        <p class="meta"></p>
+        <p class="description"></p>
+        <a class="link" target="_blank" rel="noopener noreferrer">Ouvrir la fiche</a>
+      </article>
+    </template>
+
+    <script src="script.js" type="module"></script>
+  </body>
+</html>
