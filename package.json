@@ -1,0 +1,12 @@
+{
+  "name": "tempo-calendar",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "vite --host 0.0.0.0",
+    "build": "vite"
+  },
+  "devDependencies": {
+    "vite": "latest"
+  }
+}

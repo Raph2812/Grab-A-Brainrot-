@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tempo — votre semaine, en rythme</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Playfair+Display:ital,wght@600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <a class="brand" href="#"><span class="brand-mark">t</span><span>tempo</span></a>
+        <nav class="main-nav" aria-label="Navigation principale">
+          <a class="nav-link active" href="#calendar" data-view="calendar"><span class="nav-icon">▦</span>Calendrier</a>
+          <a class="nav-link" href="#schedule" data-view="schedule"><span class="nav-icon">☷</span>Emploi du temps</a>
+          <a class="nav-link" href="#focus" data-view="focus"><span class="nav-icon">◉</span>Focus</a>
+        </nav>
+        <button class="create-button" id="createButton"><span>＋</span> Créer</button>
+        <div class="mini-calendar">
+          <div class="mini-cal-header"><span>Octobre 2024</span><span class="chevrons">‹ ›</span></div>
+          <div class="mini-grid mini-weekdays"><span>L</span><span>M</span><span>M</span><span>J</span><span>V</span><span>S</span><span>D</span></div>
+          <div class="mini-grid mini-days">
+            <span class="muted">30</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span>
+            <span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span>
+            <span>14</span><span>15</span><span class="mini-today">16</span><span>17</span><span>18</span><span>19</span><span>20</span>
+            <span>21</span><span>22</span><span>23</span><span>24</span><span>25</span><span>26</span><span>27</span>
+            <span>28</span><span>29</span><span>30</span><span>31</span><span class="muted">1</span><span class="muted">2</span><span class="muted">3</span>
+          </div>
+        </div>
+        <div class="calendars-list">
+          <p class="label">MES CALENDRIERS</p>
+          <label><input type="checkbox" checked /><i class="dot purple"></i>Personnel</label>
+          <label><input type="checkbox" checked /><i class="dot amber"></i>Travail</label>
+          <label><input type="checkbox" checked /><i class="dot blue"></i>Bien-être</label>
+        </div>
+        <div class="profile"><div class="avatar">LM</div><div><strong>Léa Martin</strong><span>Voir le profil</span></div><button aria-label="Plus d'options">•••</button></div>
+      </aside>
+
+      <main class="content">
+        <header class="topbar">
+          <div class="date-context"><span class="eyebrow">MERCREDI</span><h1>16 <em>octobre</em></h1></div>
+          <div class="top-actions"><button class="icon-button" aria-label="Rechercher">⌕</button><button class="icon-button" aria-label="Notifications">♧</button><button class="today-button">Aujourd'hui</button><button class="arrow-button">‹</button><button class="arrow-button">›</button></div>
+        </header>
+
+        <section class="feed-tabs" aria-label="Filtres du calendrier">
+          <button class="feed-tab active" data-feed="foryou">Pour vous</button>
+          <button class="feed-tab" data-feed="following">Mes calendriers</button>
+          <button class="feed-tab" data-feed="upcoming">À venir</button>
+        </section>
+
+        <section class="overview" id="calendar">
+          <div class="section-heading"><div><p class="eyebrow">VOTRE JOURNÉE</p><h2>Tout est sous contrôle.</h2></div><span class="today-date">16 OCT. 2024</span></div>
+          <div class="summary-grid">
+            <article class="summary-card schedule-card"><span class="card-kicker">PROCHAIN RENDEZ-VOUS</span><div class="meeting-icon">◌</div><h3>Point design</h3><p>Dans 25 min · 10:30 — 11:15</p><div class="attendees"><span>SM</span><span>AL</span><span>+3</span><small>Équipe produit</small></div></article>
+            <article class="summary-card free-card"><span class="card-kicker">ESPACE LIBRE</span><strong>3h 40</strong><p>Le bon moment pour avancer<br />sur vos priorités.</p><div class="free-meter"><i></i></div></article>
+            <article class="summary-card task-card"><span class="card-kicker">À NE PAS OUBLIER</span><div class="task-row"><i></i><span>Envoyer les maquettes</span></div><div class="task-row"><i></i><span>Réserver le train</span></div><button id="tasksButton">Voir les 4 tâches <b>→</b></button></article>
+          </div>
+        </section>
+
+        <section class="calendar-section">
+          <div class="calendar-toolbar"><div><p class="eyebrow">CETTE SEMAINE</p><h2>14 — 20 octobre</h2></div><div class="view-toggle"><button class="active">Semaine</button><button>Mois</button></div></div>
+          <div class="week-calendar">
+            <div class="time-column"><span></span><span>09:00</span><span>10:00</span><span>11:00</span><span>12:00</span><span>13:00</span><span>14:00</span><span>15:00</span><span>16:00</span><span>17:00</span></div>
+            <div class="day-column"><div class="day-head"><span>Lun</span><b>14</b></div><div class="grid-lines"></div><div class="event event-purple at-10">Planification<br /><small>10:00 · 45 min</small></div><div class="event event-yellow at-14">Déjeuner avec Clara</div></div>
+            <div class="day-column"><div class="day-head"><span>Mar</span><b>15</b></div><div class="grid-lines"></div><div class="event event-blue at-9">Deep work<br /><small>09:30 · 2h</small></div><div class="event event-pink at-13">Yoga</div></div>
+            <div class="day-column selected"><div class="day-head"><span>Aujourd'hui</span><b>16</b></div><div class="grid-lines"></div><div class="current-time"><i></i></div><div class="event event-purple at-10">Point design<br /><small>10:30 · 45 min</small></div><div class="event event-green at-12">Déjeuner</div><div class="event event-blue at-15">Revue projet<br /><small>15:00 · 1h</small></div></div>
+            <div class="day-column"><div class="day-head"><span>Jeu</span><b>17</b></div><div class="grid-lines"></div><div class="event event-yellow at-11">Café networking</div><div class="event event-purple at-14">Session stratégie<br /><small>14:00 · 1h 30</small></div></div>
+            <div class="day-column"><div class="day-head"><span>Ven</span><b>18</b></div><div class="grid-lines"></div><div class="event event-pink at-9">Pilates</div><div class="event event-green at-11">Démo équipe</div></div>
+          </div>
+        </section>
+      </main>
+      <aside class="right-panel">
+        <div class="weather"><span class="weather-symbol">☼</span><div><b>18°</b><span>Paris, dégagé</span></div></div>
+        <section class="focus-panel" id="focus"><p class="eyebrow">FOCUS DU JOUR</p><h2>Une chose<br />à la fois.</h2><p class="focus-copy">Vous avez 4h 15 de temps protégé aujourd'hui.</p><button id="focusButton">Démarrer une session <span>→</span></button><div class="focus-progress"><span>OBJECTIF HEBDO.</span><b>11h 20 <small>/ 15h</small></b><div><i></i></div></div></section>
+        <section class="up-next"><div class="up-next-header"><p class="eyebrow">À VENIR</p><button>Tout voir</button></div><article><time>JEU. 17 · 11:00</time><h3>Café networking</h3><p><i class="dot amber"></i> Le Progrès, 1er</p></article><article><time>VEN. 18 · 09:00</time><h3>Pilates avec Inès</h3><p><i class="dot pink"></i> Studio Mouv'</p></article></section>
+      </aside>
+    </div>
+    <div class="toast" id="toast" role="status"></div>
+    <script src="/app.js"></script>
+  </body>
+</html>
